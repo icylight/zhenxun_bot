@@ -144,3 +144,9 @@ member_activity_handle.py
 Yu-Gi-Oh/
 csgo/
 fantasy_card/
+
+resources/
+data/
+config.yaml
+.env.dev
+config.py
