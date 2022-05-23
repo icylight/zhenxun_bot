@@ -25,5 +25,10 @@ miao=on_command("来个猫猫")
 @miao.handle()
 async def hf(bot:Bot,ev:Event):
     import requests
-    img=requests.get("http://edgecats.net/")
+    session = requests.session()
+    session.proxies = {
+        "http": "http://localhost:2802",
+        "https": "http://localhost:2802",
+    }
+    img=session.get("http://edgecats.net/")
     await bot.send(event=ev,message=MessageSegment.image(img.content))
